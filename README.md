@@ -1,0 +1,2 @@
+# Piccolo-Payroll
+P!ccolo Payroll is a web based software which can be used for calculating the salaries of employees. It keeps an record in its Attendence Management System. It provides an individual account to each employee. Employees can mark attendence from their own accounts and can see their attendence of the last one year. So there is no hassle for the management to manage the records of employees and calculating the salaries at the end of each and every month. 
