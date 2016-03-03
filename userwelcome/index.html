@@ -1,0 +1,243 @@
+<html>
+<head>
+  <title>Payroll System</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <link rel = "stylesheet" type = "text/css" href = "../css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" type="text/css" href="../signup/css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $("#chngpwd").click(function(){
+        $("#passwordModal").modal({backdrop: "static"});
+    });
+    <?php session_start(); if($_SESSION['today_att']==1){ ?>
+      $('#markatt').addClass('disabled');
+      $('#statusat').text('Marked');
+      $('#athelp').text('No need to mark');
+      <?php } ?>
+    $("#markatt").on('click',function(e){
+      <?php session_start(); if($_SESSION['today_att']==1){ ?>
+        return;
+        <?php } ?>
+       e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: 'markattendance.php',
+            data: {},
+            error: function()
+            {
+               alert("Request Failed");
+            },
+            success: function(response)
+            {  
+              alert(response);
+               $('#markatt').addClass('disabled');
+        $('#statusat').text('Marked');
+      $('#athelp').text('No need to mark');
+            }
+        }); 
+    });
+    $("#save").on('click',function(e){
+      
+       e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: 'passwdchange/passwdchange.php',
+            data: $('form').serialize(),
+            error: function()
+            {
+               alert("Request Failed");
+            },
+            success: function(response)
+            {  
+              alert(response);
+            }
+        }); 
+    });
+  });
+  </script>
+  </head>
+  <body>
+  	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#">P!ccolo Payroll</a>
+    </div>
+    <div class="collapse navbar-collapse" id="Navbar">
+      <ul class="nav navbar-nav">
+        <li id="" class="active" ><a href="#myPage">DASHBOARD</a></li>
+        <li id=""><a href="../userwelcome/salaryslip">SALARY SLIP</a></li> 
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+         <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user i-color"></span><?php echo " ".$_SESSION["user_name"]; ?><span class="caret"></span></a>
+        <ul class="dropdown-menu" style="color: #000000">
+          <li><a href="#">Profile</a></li>
+          <li id="chngpwd"><a href="#passwordModal">Change Password</a></li>
+          <li><a href="#">Leave Application</a></li> 
+        </ul>
+        </li>
+        <li id="lbtn"><a href="../logout.php"><span class="glyphicon glyphicon-log-in"></span> LOGOUT</a></li>
+      </ul>
+    </div>
+</nav>
+<div class="container-fluid welcome">
+	<h1> Welcome <?php echo " ".$_SESSION["first_name"]." ".$_SESSION["last_name"];?></h1> 
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h2>Today Attendance</h2>
+        </div>
+        <div class="panel-body">
+          <iframe src="http://free.timeanddate.com/clock/i53bsz9z/n516/fs20/tt0/th2/tb4" frameborder="0" width="300" height="48"style="margin-top: 55px;  font-size: 30px; "></iframe>
+        </div>
+        <div class="panel-footer">
+          <h3 id="statusat">Not Marked</h3>
+          <h4 id="athelp">Mark Now</h4>
+          <button class="btn btn-lg" id="markatt">I Am Present!</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 ">
+     <div class="panel panel-default text-center">
+       <div class="panel-heading">
+          <h2>Total Attendance</h2>  
+      </div>
+       <div class="panel-body">
+          <h4><strong>Total Working Days: </strong><?php 
+          require_once('../connect.php');
+          $month='T'.date('mY');
+          $id=$_SESSION['id'];
+            $query="SELECT * from attendance WHERE empid='$id'";
+          $result=mysql_query($query);
+          $row1=mysql_fetch_array($result);
+          $result=$row1[$month];
+          echo $result;
+          ?>
+</h4>
+          <h4><strong>Total Worked Days: </strong> <?php
+          $month='W'.date('mY');
+          $id=$_SESSION['id'];
+            $query="SELECT * from attendance WHERE empid='$id'";
+          $result=mysql_query($query);
+          $row1=mysql_fetch_array($result);
+          $result=$row1[$month];
+          echo $result;
+          ?></h4>
+          <h4><strong>Total Leaves: </strong><?php
+          $month='L'.date('mY');
+          $id=$_SESSION['id'];
+            $query="SELECT * from attendance WHERE empid='$id'";
+          $result=mysql_query($query);
+          $row1=mysql_fetch_array($result);
+          $result=$row1[$month];
+          echo $result;
+          ?></h4>
+        </div>
+        <div class="panel-footer">
+          <h3 style="font-size: 25px; margin-top: 50px;">For more information check Month View</h3>
+        </div> 
+     </div>
+    </div>
+    <div class="col-md-4">
+     <div class="panel panel-default text-center">
+       <div class="panel-heading">
+          <h2>Last Salary</h2>
+        </div>
+        <div class="panel-body" >
+          <h4><strong>Total Salary: </strong><?php
+          $day=str_pad(date('m')-01,  2,'0', STR_PAD_LEFT);
+          $column='Total'.$day.date('Y');
+          $query="SELECT * FROM salary where empid='$id'";
+      $result=mysql_query($query) or die(mysql_error());
+        $row=mysql_fetch_array($result);
+        echo $row[$column];
+        ?></h4>
+          <h4><strong>S/B Account Number: <br></strong><?php
+          $query="SELECT * FROM users where empid='$id'";
+      $result=mysql_query($query) or die(mysql_error());
+        $row=mysql_fetch_array($result);
+        echo $row['accno'];
+        ?>
+          </h4>
+          <h4><strong>Bonus: </strong><?php
+          $column='bonus'. str_pad(date('m')-01,  2,'0', STR_PAD_LEFT).date('Y');
+          $query="SELECT * FROM salary where empid='$id'";
+      $result=mysql_query($query) or die(mysql_error());
+        $row=mysql_fetch_array($result);
+        echo $row[$column];
+        ?></h4>
+          <h4><strong>D.A.: </strong><?php
+          $column='DA'. str_pad(date('m')-01,  2,'0', STR_PAD_LEFT).date('Y');
+          $query="SELECT * FROM salary where empid='$id'";
+      $result=mysql_query($query) or die(mysql_error());
+        $row=mysql_fetch_array($result);
+        echo $row[$column];
+        ?></h4>
+        </div>
+        <div class="panel-footer">
+          <h3 style="font-size: 25px; margin-top: 50px;">For more information check Salary Slip</h3>
+        </div> 
+     </div> 
+    </div>
+    
+  </div>
+</div>
+<div class="modal fade" id="passwordModal" role="dialog">
+<div class="modal-dialog">
+    
+    <div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3>Change Password <span class="extra-title muted"></span></h3>
+    </div>
+    <div class="modal-body form-horizontal">
+    <form>
+        <div class="control-group">
+            <label for="current_password" class="control-label">Current Password</label>
+            <div class="controls">
+                <input type="password" class="form-control" name="current_password">
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="new_password" class="control-label">New Password</label>
+            <div class="controls">
+                <input type="password" class="form-control" name="new_password">
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="confirm_password" class="control-label">Confirm Password</label>
+            <div class="controls">
+                <input type="password" class="form-control" name="confirm_password">
+            </div>
+        </div>      
+    <div class="modal-footer">
+        <button href="#" class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button href="#" class="btn btn-primary" type="submit" id="save">Save changes</button>
+    </div>
+    </form>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+  /*$(document).ready(function(){
+    alert("called");
+    $("#markatt").click(function(){
+         alert("clicked");
+        <?php session_start(); $_SESSION["today_att"] = 1; ?>
+        $('#markatt').addClass('disabled');
+    });
+  });*/
+</script>
+  </body>
+  </html>

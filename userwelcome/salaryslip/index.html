@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>Payroll System</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel = "stylesheet" type = "text/css" href = "css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+</script></head>
+<body>
+<h1>Salary Slip for last month is:-</h1>
+<p style="font-size: 26px;">
+<?php
+session_start();
+require_once("connect.php");
+$id=$_SESSION['id'];
+$query="SELECT * from users where empid='$id'";
+$result=mysql_query($query);
+$row=mysql_fetch_array($result);
+echo "Employee ID: ".$row['empid'];
+echo "<br />\n";
+echo "Employee Name: ".$row['fname']." ".$row['lname'];
+echo "<br />\n";
+echo "Bank Account Number: ".$row['accno'];
+echo "<br />\n";
+$query="SELECT * from salary where empid='$id'";
+$result=mysql_query($query);
+$columntotal='Total'.date('mY');
+$columnbonus='bonus'.date('mY');
+$columnda='DA'.date('mY');
+$row=mysql_fetch_array($result);
+echo "Salary for month: ".date('m/Y');
+echo "<br />\n";
+echo "Basic Salary:".($row[$columntotal]-$row[$columnbonus]-$row[$columnda]);
+echo "<br />\n";
+echo "Bonus: ".($row[$columnbonus]);
+echo "<br />\n";
+echo "Daily Allowance:".$row[$columnda];
+echo "<br />\n";
+echo "Total Salary: ".($row[$columntotal]);
+?>
+</p>
+</body>
+</html>

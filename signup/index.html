@@ -1,0 +1,150 @@
+<html>
+<head>
+  <title>Payroll System</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <link rel = "stylesheet" type = "text/css" href = "../css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="css/index.css">
+   
+  </head>
+  <body>
+  <nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#">P!ccolo Payroll</a>
+    </div>
+    <div class="collapse navbar-collapse" id="Navbar">
+      <ul class="nav navbar-nav">
+        <li id="myPagetab" ><a href="../#myPage">HOME</a></li>
+        <li id="abouth"><a href="../#abt-sw">ABOUT SOFTWARE</a></li>
+        <li id="featurestab"><a href="../#features">FEATURES</a></li> 
+        <li id="developertab"><a href="../#developer">DEVELOPER</a></li> 
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="#"><span class="glyphicon glyphicon-user i-color"></span> SIGN UP</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
+      </ul>
+    </div>
+</nav>
+<div class="container body-contain">
+  <div class="row">
+  	<div class="col-md-12">
+    
+          <form  name="signupForm"class="form-horizontal">
+          <fieldset>
+            <div id="legend">
+              <legend class="">Register</legend>
+            </div>
+           
+             
+
+            <div class="control-group">
+              <label class="control-label" for="username">Username</label>
+              <div class="controls">
+                <input type="text" id="username" name="username" placeholder="" class="form-control input-lg" required="This field cannot be empty.">
+                <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+              </div>
+            </div>
+
+             <div class="control-group">
+              <label class="control-label" for="empid">Employee ID</label>
+              <div class="controls">
+                <input type="text" id="employeeid" name="empid" placeholder="" class="form-control input-lg">
+                <p class="help-block">Employee ID is the ID written on your ID Card or Joinning letter</p>
+              </div>
+            </div>
+         
+ 			<div class="control-group">
+              <label class="control-label" for="mno">Mobile Number</label>
+              <div class="controls">
+                <input type="tel" id="mobileno" name="mno" placeholder="" minlength="10" maxlength="10" class="form-control input-lg">
+                <p class="help-block">Enter your personal mobile number.</p>
+              </div>
+            </div>
+        
+
+ 			<div class="control-group">
+              <label class="control-label" for="accno">Account Number</label>
+              <div class="controls">
+                <input type="tel" id="accno" name="accno" placeholder="" minlength="14" maxlength="16" class="form-control input-lg">
+                <p class="help-block">Enter your bank account number.</p>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="email">E-mail</label>
+              <div class="controls">
+                <input type="email" id="email" name="email" placeholder="" class="form-control input-lg"  onblur="validateEmail()">
+                <p class="help-block">Please provide your E-mail</p>
+              </div>
+            </div>
+         
+            <div class="control-group">
+              <label class="control-label" for="password">Password</label>
+              <div class="controls">
+                <input type="password" id="password" name="password" placeholder="" class="form-control input-lg">
+                <p class="help-block">Password should be at least 6 characters</p>
+              </div>
+            </div>
+         
+            <div class="control-group">
+              <label class="control-label" for="password_confirm">Password (Confirm)</label>
+              <div class="controls">
+                <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="form-control input-lg">
+                <p class="help-block">Please confirm password</p>
+              </div>
+            </div>
+         
+            <div class="control-group">
+              <!-- Button -->
+              <div class="controls">
+                <input id="button" type="submit" name="submit" value="Sign-Up">
+              </div>
+            </div>
+          </fieldset>
+        </form>
+    
+    </div> 
+  </div>
+</div>
+<script>
+   	function validateEmail(){
+   		var email=document.forms["signupForm"]["email"].value;
+   		if(email.indexOf('@')===-1||email.indexOf(".com")===-1)
+   			alert("Enter correct email id");
+   	}
+
+   </script>
+   <script type="text/javascript">
+   	$(document).ready(function() {
+   		
+     $('form').on('submit', function (e) {
+     	
+         // e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: 'signup.php',
+            data: $('form').serialize(),
+            error: function()
+            {
+               alert("Request Failed");
+            },
+            success: function(response)
+            {  
+               alert(response);
+                window.location.href="../index.html";
+            }
+        });
+        return false;
+    }); 
+});
+
+   </script>
+  </body>
+  </html>

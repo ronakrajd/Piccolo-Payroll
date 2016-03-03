@@ -1,0 +1,386 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"for",
+				"form	Tag"
+			],
+			[
+				"sa",
+				"save"
+			],
+			[
+				"h",
+				"h1	Tag"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"mys",
+				"mysql_query"
+			],
+			[
+				"clic",
+				"click"
+			],
+			[
+				"mar",
+				"markatt"
+			],
+			[
+				"mysql",
+				"mysql_query"
+			],
+			[
+				"e",
+				"exists"
+			],
+			[
+				"_",
+				"_SESSION"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"unse",
+				"unset"
+			],
+			[
+				"td",
+				"td	Tag"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"padd",
+				"padding-right"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"te",
+				"text-transform"
+			],
+			[
+				"use",
+				"user_name"
+			],
+			[
+				"se",
+				"_SESSION"
+			],
+			[
+				"pass",
+				"passwd"
+			],
+			[
+				"pas",
+				"passwd"
+			],
+			[
+				"my",
+				"mysqli_fetch"
+			],
+			[
+				"emp",
+				"empid"
+			],
+			[
+				"d",
+				"data"
+			],
+			[
+				"em",
+				"empid"
+			],
+			[
+				"email",
+				"email"
+			],
+			[
+				"db",
+				"dbname"
+			],
+			[
+				"DB",
+				"DB_HOST"
+			],
+			[
+				"re",
+				"required	Attr"
+			],
+			[
+				"m",
+				"max	Attr"
+			],
+			[
+				"index",
+				"indexOf"
+			],
+			[
+				"contai",
+				"contain"
+			],
+			[
+				"on",
+				"onblur	Attr"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"di",
+				"div	Tag"
+			],
+			[
+				"fl",
+				"float"
+			],
+			[
+				"na",
+				"navbar-default"
+			],
+			[
+				"hei",
+				"height"
+			],
+			[
+				"over",
+				"overflow-wrap"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/F/Documents/wamp/www/New folder",
+		"/F/Documents/wamp/www/New folder/css",
+		"/F/Documents/wamp/www/New folder/js",
+		"/F/Documents/wamp/www/New folder/signup",
+		"/F/Documents/wamp/www/New folder/userwelcome",
+		"/F/Documents/wamp/www/New folder/userwelcome/css",
+		"/F/Documents/wamp/www/New folder/userwelcome/passwdchange",
+		"/F/Documents/wamp/www/New folder/userwelcome/salaryslip"
+	],
+	"file_history":
+	[
+		"/F/New folder/CRS/signup.html",
+		"/F/New folder/CRS/signin.html",
+		"/F/New folder/CRS/register.html",
+		"/F/New folder/CRS/menu.html",
+		"/F/New folder/CRS/index.html",
+		"/F/New folder/CRS/signup.php",
+		"/F/New folder/CRS/signin.php",
+		"/F/New folder/CRS/register.php",
+		"/F/Documents/wamp/www/New folder/signup/index.html",
+		"/F/Documents/wamp/www/New folder/userwelcome/markattendance.php",
+		"/F/Documents/wamp/www/New folder/userwelcome/salaryslip/index.html",
+		"/F/Documents/wamp/www/New folder/userwelcome/passwdchange/passwdchange.php",
+		"/F/Documents/wamp/www/New folder/userwelcome/css/index.css",
+		"/C/Users/Ronak Raj Doongarwal/Downloads/connect.php",
+		"/F/Documents/wamp/www/New folder/userwelcome/index.html",
+		"/F/Documents/wamp/www/New folder/index.html",
+		"/F/Documents/wamp/www/New folder/userwelcome/passwdchange/index.html",
+		"/F/Documents/wamp/www/New_folder/css/index.css",
+		"/F/Documents/wamp/www/New folder/logout.php",
+		"/F/Documents/wamp/www/New folder/connect.php",
+		"/F/Documents/wamp/www/New folder/signup/signup.php",
+		"/F/Documents/wamp/www/New folder/login.php",
+		"/F/Documents/wamp/www/New_folder/loginstyle.css",
+		"/F/Documents/wamp/www/New folder/index1.html",
+		"/F/New folder/userwelcome.html",
+		"/F/Documents/wamp/www/New folder/getusername.php",
+		"/F/Documents/wamp/www/New folder/signup/css/index.css",
+		"/F/Documents/wamp/www/New folder/userwelcome.html",
+		"/F/Documents/wamp/www/New folder/css/index.css",
+		"/F/Documents/wamp/www/New folder/css/index1.css",
+		"/F/Documents/wamp/www/New folder/signup/login.php",
+		"/F/Documents/wamp/www/New_folder/index.html",
+		"/C/Users/Ronak Raj Doongarwal/Downloads/Compressed/showcase-font-family/css/style.css",
+		"/C/Users/Ronak Raj Doongarwal/Downloads/Compressed/showcase-font-family/index.html",
+		"/F/Documents/wamp/www/New folder/index1"
+	],
+	"find":
+	{
+		"height": 50.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"rahul",
+			"new",
+			"index1",
+			"              \n",
+			";",
+			"abt",
+			"myP",
+			"}"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 42.0
+	},
+	"input":
+	{
+		"height": 44.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 80.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 214.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
